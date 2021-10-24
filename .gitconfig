@@ -1,0 +1,128 @@
+[alias]
+    # branch
+    br = !git branch --sort=-committerdate --format='%(HEAD) %(color:bold yellow)%(refname:short)%(color:reset) %(color:dim white)(%(committerdate:relative)) %(color:dim blue)<%(authorname)>'
+    brd = "!git branch -D \"$1\" #"
+    brm = "!git branch -m "\"$1\"" #"
+    # commit
+    ci = commit -m
+    # amend your last commit
+    amend = commit --amend
+    ammend = commit --amend
+    # checkout master
+    com = co master
+    # checkout
+    co = checkout
+    # fixup
+    fixup = !sh -c 'git commit -m \"fixup! $(git log -1 --format='\\''%s'\\'' $@)\"' -
+    # fetch origin
+    fo = !git fetch origin
+    # fetch origin and rebase with origin/master
+    fro = !git fetch origin && git rebase origin/master
+    # gone branches
+    gone = !"git branch -vv | grep ': gone]' | grep -v "\\*" | awk '{ print $1; }'"
+    # pretty log
+    lg = log --graph --abbrev-commit --date=human --pretty='format:%Cred%h%Creset -%C(bold yellow)%d%Creset %s %Creset%C(dim white)(%cd) %C(dim blue)<%an>'
+    lost = !"git fsck | awk '/dangling commit/ {print $3}' | git show --format='SHA1: %C(yellow)%h%Creset %f' --stdin | awk '/SHA1/ {sub(\"SHA1: \", \"\"); print}'"
+    # push
+    pu = !git push origin head
+    puf = !git push origin head -f
+    # rebase
+    rb = rebase
+    rba = rebase --abort
+    rbc = rebase --continue
+    rbs = rebase --skip
+    ri = rebase --interactive --autosquash
+    rio = rebase --interactive --autosquash origin/master
+    # reflog
+    ref = !git reflog --date=iso --date=human --format='%C(bold yellow)%h%Creset %C(bold red)%D%Creset %gs %C(dim blue)(%cd)%Creset'
+    # remote update
+    ru = remote update
+    # commit with squash tag
+    squash = !sh -c 'git commit -m \"squash! $(git log -1 --format='\\''%s'\\'' $@)\"' -
+    # status
+    st = status
+    # undo / reset
+    undo = "!git reset head~\"$1\" #"
+    # working in progress commit
+    unwip = !"git log -n 1 | grep -q -c wip && git reset HEAD~1"
+    wip = !"git add -A; git ls-files --deleted -z | xargs -0 git rm; git commit -m \"wip\" --no-verify"
+[apply]
+    whitespace = fix
+[branch]
+    autosetuprebase = always
+[credential]
+    helper = osxkeychain
+[color]
+    diff = auto
+    interactive = auto
+    status = auto
+    ui = true
+    indentHeuristic = true
+[core]
+    attributesfile = ~/.gitattributes
+	autocrlf = false
+    editor = vim
+    excludesfile = ~/.gitignore
+    quotepath = false
+    safecrlf = true
+    whitespace = cr-at-eol,space-before-tab,-indent-with-non-tab,trailing-space
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+[color "status"]
+    added = green
+    changed = yellow
+    untracked = cyan
+[color "diff-highlight"]
+    oldNormal = red bold
+    oldHighlight = red bold 52
+    newNormal = green bold
+    newHighlight = green bold 22
+[color "diff"]
+    meta = yellow
+    frag = magenta bold # line info
+    commit = yellow bold
+    old = red bold # deletions
+    new = green bold # additions
+    whitespace = red reverse
+[diff]
+    renames = copies
+    mnemonicprefix = true
+    algorithm = patience
+[difftool]
+    prompt = false
+[fetch]
+    prune = true
+[format]
+    pretty = %Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset
+[hub]
+    protocol = https
+[icdiff]
+    options = --highlight --line-numbers
+[include]
+    path = ~/.gitconfig.local
+[mergetool]
+    keepBackup = false
+[pager]
+    difftool = true
+[pull]
+    rebase = preserve
+[push]
+    default = simple
+    followTags = true
+[rebase]
+    autosquash = true
+    autostash = true
+    stat = true
+[rerere]
+    autoupdate = true
+    enabled = 1
+[status]
+    showUntrackedFiles = all
+[tag]
+    sort = version:refname
+[user]
+	name = André Moreno
+	email = andremoreno3@gmail.com
+	username = andrewmoreno

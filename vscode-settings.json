@@ -1,0 +1,73 @@
+{
+  // Editor
+  "breadcrumbs.enabled": true,
+  "diffEditor.wordWrap": "off",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 16,
+  "editor.fontWeight": 300,
+  "editor.formatOnPaste": true,
+  "editor.gotoLocation.multipleDefinitions": "goto",
+  "editor.parameterHints.enabled": false,
+  "editor.renderLineHighlight": "gutter",
+  "editor.rulers": [80],
+  "editor.snippetSuggestions": "top",
+  "editor.tabSize": 2,
+  "editor.wordWrap": "off",
+
+  // Explores, files, etc
+  "explorer.autoReveal": false,
+  "explorer.compactFolders": false,
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "extensions.autoUpdate": "onlyEnabledExtensions",
+  "extensions.ignoreRecommendations": true,
+  "files.autoSave": "off",
+  "files.defaultLanguage": "markdown",
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "files.trimFinalNewlines": true,
+  "git.enabled": false,
+  "javascript.suggest.autoImports": true,
+  "javascript.updateImportsOnFileMove.enabled": "never",
+  "search.exclude": {
+    "**/package.json": true,
+    "**/yarn.lock": true,
+    "CHANGELOG.md": true,
+    "public/**": true,
+    "src/assets/**": true
+  },
+  "terminal.external.osxExec": "iTerm.app",
+  "terminal.integrated.fontFamily": "Meslo LG L DZ for Powerline",
+  "typescript.suggest.autoImports": true,
+  "typescript.updateImportsOnFileMove.enabled": "never",
+
+  // Turbo Console Log extension
+  "turboConsoleLog.delimiterInsideMessage": "",
+  "turboConsoleLog.insertEnclosingClass": false,
+  "turboConsoleLog.logMessagePrefix": "",
+  "turboConsoleLog.quote": "'",
+  "turboConsoleLog.includeFileNameAndLineNum": false,
+  "turboConsoleLog.insertEnclosingFunction": false,
+
+  // Workbench
+  "workbench.colorCustomizations": {
+    "[Dracula]": {
+      "editorIndentGuide.activeBackground": "#636783",
+      "editorRuler.foreground": "#373942",
+      "list.activeSelectionBackground": "#ffffff",
+      "list.activeSelectionForeground": "#0f0c17",
+      "list.hoverBackground": "#6842C2",
+      "list.hoverForeground": "#ffffff"
+    }
+  },
+  "workbench.editor.enablePreview": false,
+  "workbench.editor.labelFormat": "short",
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorTheme": "Gruvbox Dark Medium"
+}
